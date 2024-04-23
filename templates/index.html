@@ -19,11 +19,16 @@
             
             // Call getImageList() and also send profile object as an argument 
             console.log(profile)
+            document.getElementById("displayname").innerText = profile.displayName
+            document.getElementById("gazou").src = profile.pictureUrl
           } else {
             liff.login()
           }
         }
         main()
+
     </script>
+    <p id="displayname"></p>
+    <img src="" id="gazou">
 </body>
 </html>
