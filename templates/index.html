@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>LIFF hello</h1>
+    <script>
+        async function main() {
+          // LIFF Initialize
+          await liff.init({ liffId: "2004720921-ZRKmnJjl" })
+          
+          // Support external browser openning
+          if (liff.isLoggedIn()) {
+            // Get user profile from LINE
+            const profile = await liff.getProfile()
+            
+            // Call getImageList() and also send profile object as an argument 
+            console.log(profile)
+          } else {
+            liff.login()
+          }
+        }
+        main()
+    </script>
 </body>
 </html>
